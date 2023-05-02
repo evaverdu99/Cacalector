@@ -1,7 +1,7 @@
-from model.App import *
 from tkinter import *
 from tkinter import filedialog
-        
+from Controller.App import *
+     
 def main(): 
     root = Tk()
     root.withdraw()

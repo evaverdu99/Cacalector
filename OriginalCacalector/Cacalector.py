@@ -33,7 +33,7 @@ class Poop:
         self.minute = minute
 
     def __str__(self):
-        return f"Mi caca número {self.num} se realizó el día {self.day}/{self.month}/{self.year} a las {self.hour}:{self.minute}"
+        return f"My poop number {self.num} was made on {self.day}/{self.month}/{self.year} at {self.hour}:{self.minute}"
 
 def randonColor():
     return ["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)])]
@@ -117,8 +117,8 @@ def showTotalGrafic():
     plt.bar(peopleData, poopsTotalData, color ='green',
             width = 0.5)
     
-    plt.ylabel("No. de cacas")
-    plt.title("Numero total de cacas por persona")
+    plt.ylabel("º of Poops")
+    plt.title("Total number of poops per person")
     plt.show()
 
 def TotalPoopsGrafic():
@@ -130,7 +130,7 @@ def TotalPoopsGrafic():
         namesData.append(person.name)
         poopsTotalData.append(len(person.PoopsList))
     
-    showOneBarGrafic(namesData, poopsTotalData, "No. de cacas","Numero total de cacas por persona")
+    showOneBarGrafic(namesData, poopsTotalData, "Nº of Poops","Total number of poops per person")
 
 def MonthsInData():
     global peopleList
@@ -177,9 +177,9 @@ def MonthPoopsGrafic():
         cont += 1 
             
     # Adding Xticks
-    plt.title("No. de cacas por meses")
-    plt.xlabel("Meses", fontweight ='bold', fontsize = 15)
-    plt.ylabel("No. de cacas", fontweight ='bold', fontsize = 15)
+    plt.title("Nº of poops per month")
+    plt.xlabel("Months", fontweight ='bold', fontsize = 15)
+    plt.ylabel("Nº of Poops", fontweight ='bold', fontsize = 15)
     plt.xticks([r + barWidth for r in range(len(ListOfPeopleWithListOfPopMonthly[0]))], ExistingMonthsData)
     plt.legend()
 

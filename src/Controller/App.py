@@ -6,6 +6,6 @@ class App:
         self.dataSaver = DataSaver(_directory)
     
     def startApplication(self):
-        self.dataSaver
+        self.dataSaver.importTextFromData()
     
     
