@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import datetime 
-
+from tkinter import *
+from tkinter import filedialog
 
 import random
 
@@ -38,7 +39,13 @@ def randonColor():
     return ["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)])]
  
 def importTextFromData():
-    file = open('data.txt', encoding="utf8")
+     
+    root = Tk()
+    root.withdraw()
+
+    file_path = filedialog.askopenfilename(title="Open the export chat to analise", filetypes=(("text    files","*.txt"), ("all files","*.*")))
+  
+    file = open(file_path, encoding="utf8")
     lines = file.readlines()
     for index, line in enumerate(lines):
         if index!=1:
@@ -195,7 +202,7 @@ def notes():
             edgecolor ='grey', label ='CSE')   
     
 def showOneBarGrafic(names, data, textylabel, title):
-    fig = plt.figure(figsize = (4, 4))
+    fig = plt.figure(figsize = (6, 4))
     
     # creating the bar plot
     plt.barh(names, data, color ='green')
