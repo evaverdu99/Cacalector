@@ -75,11 +75,12 @@ def createNewPerson(personName):
     global peopleList
     peopleList.append(Person(personName))
 
+
 def addNewPoop(index, date, hour):
     global peopleList
     sD = date.split("/")
     sH = hour.split(":")
-    peopleList[index].PoopsList.append(Poop(len(peopleList[index].PoopsList) + 1, sD[0], sD[1], sD[2], sH[0], sH[1]))
+    peopleList[index].PoopsList.append(Poop(len(peopleList[index].PoopsList) + 1, sD[0], sD[1 ], sD[2], sH[0], sH[1]))
     
 def personIsAlreadyInTheList(personName):
     

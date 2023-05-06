@@ -8,7 +8,7 @@ class Person:
     
     def poopsInAMonth(self, monthToSearch):
         count = 0
-        for pop in self.PoopsList:
+        for pop in self.poopsList:
             if pop.month == monthToSearch:
                 count += 1
         return count

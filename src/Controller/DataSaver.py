@@ -1,5 +1,6 @@
 from Model.Model import *
 from Model.Poop import *
+from Model.Person import *
 
 class DataSaver:
     def __init__(self, _directory, _model):
@@ -7,7 +8,7 @@ class DataSaver:
         self.model = _model
 
     def importTextFromData(self):
-        file = open('data.txt', encoding="utf8")
+        file = open(self.directory, encoding="utf8")
         lines = file.readlines()
         for index, line in enumerate(lines):
             if index!=1:
@@ -37,7 +38,7 @@ class DataSaver:
     def addNewPoop(self, index, date, hour):
         sD = date.split("/")
         sH = hour.split(":")
-        self.model.peopleList[index].PoopsList.append(Poop(len(self.model.peopleList[index].PoopsList) + 1, sD[0], sD[1], sD[2], sH[0], sH[1]))
+        self.model.peopleList[index].poopsList.append(Poop(len(self.model.peopleList[index].poopsList) + 1, sD[0], sD[1], sD[2], sH[0], sH[1]))
         
     def personIsAlreadyInTheList(self, personName):
         

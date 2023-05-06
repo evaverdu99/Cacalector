@@ -10,7 +10,7 @@ def main():
     
     app = App(file_path)
     app.startApplication()
-     
+    
     print("end")
     
 
