@@ -32,10 +32,11 @@ class MonthsGraficView:
                 brsum = np.arange(len(ListOfPeopleWithListOfPopMonthly[0]))
             else:
                 brsum = [x + barWidth for x in brsum] 
-            plt.bar(brsum, person, color = self.randonColor(), width=barWidth, edgecolor = 'grey' , label = self.model.peopleList[cont].name)
+            plt.bar(brsum, person, color = self.PersonColor(cont), width=barWidth, edgecolor = 'black' , label = self.model.peopleList[cont].name, zorder=2, linewidth=0.5)
             cont += 1 
                 
         # Adding Xticks
+        plt.grid(zorder=1)
         plt.title("Nº of poops per month")
         plt.xlabel("Months", fontweight ='bold', fontsize = 15)
         plt.ylabel("Nº of Poops", fontweight ='bold', fontsize = 15)
@@ -44,6 +45,11 @@ class MonthsGraficView:
 
     def randonColor(self):
         return ["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)])]
+
+    def PersonColor(self,i):
+        #              Yellow, Dark Green, Purple,  Light green, Pink      
+        color_list = ['#FFFF00','#228B22','#AB82FF','#CAFF70', '#FF1493']
+        return color_list[i]
 
     def MonthsInData(self):
         intMonths = []
